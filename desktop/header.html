@@ -1,1 +1,70 @@
+<script type='text/x-handlebars' data-template-name='list/topic-list-item.raw'>
 
+<div class="blog">
+<div class="fn-flex">
+<div class="fn-flex-1 article-list__panel">
+
+<div class="fn__flex">
+
+<div class="avatar">
+<a class="pren" href="/users/{{topic.creator.username}}" data-auto-route="true" data-user-card="{{topic.creator.username}}">{{avatar topic.creator imageSize="large"}}</a> 
+</div>
+
+<div class="fn__flex-1">
+<a class="pren" href="/users/{{topic.creator.username}}" data-auto-route="true" data-user-card="{{topic.creator.username}}">
+  {{topic.creator.username}} </a>
+
+{{category-link topic.category showParent="true" onlyStripe="true"}}
+
+	<span class="ft__smaller ft__fade">
+		• &nbsp;&nbsp;
+		{{format-date topic.bumpedAt format="tiny"}}
+	</span>
+
+&nbsp;
+
+<span class="article-level1">
+	{{#if topic.replyCount}} {{topic.replyCount}}
+</span> 
+
+{{i18n 'replies_lowercase' count=topic.replyCount}} {{else}} {{/if}}
+
+	<span class="tag-r">  {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}   </span>          
+
+	<h2 class="article-list__title fn__ellipsis">
+
+		{{topic-link topic}} 
+		  
+		{{#if topic.featured_link}}
+			{{topic-featured-link topic}}
+		{{/if}}
+			
+		{{#if showTopicPostBadges}}
+			  {{raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl}}
+		{{/if}} 
+
+	</h2>
+</div>
+
+	</div>
+
+	<div class="telohome">{{raw "list/topic-excerpt" topic=topic}} </div>
+</div>
+</div>
+</div>
+</script>
+
+<script type='text/x-handlebars' data-template-name='topic-list-header.raw'>
+  {{raw "topic-list-header-column" order='vopr' name='number.format.delimiter' forceName='Вопросы'}}
+ 
+  {{#if showLikes}}
+     {{raw "topic-list-header-column" sortable='true' order='likes' number='true' forceName='Likes'}}
+  {{/if}}
+  {{#if showOpLikes}}
+     {{raw "topic-list-header-column" sortable='true' order='op_likes' number='true' forceName='Likes'}}
+  {{/if}}
+  
+  {{raw "topic-list-header-column" sortable=sortable number='true' order='views' name='views'}}
+  {{raw "topic-list-header-column" sortable=sortable number='true' order='posts' name='replies'}}
+  {{raw "topic-list-header-column" sortable=sortable number='true' order='activity' name='activity'}}
+</script>
