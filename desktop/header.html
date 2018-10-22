@@ -2,7 +2,6 @@
 
 <div class="blog">
 <div class="fn-flex">
-<div class="fn-flex-1 article-list__panel">
 
 <div class="fn__flex">
 
@@ -31,7 +30,7 @@
 
 	<span class="tag-r">  {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}   </span>          
 
-	<h2 class="article-list__title fn__ellipsis">
+	<h2 class="post-title">
 
 		{{topic-link topic}} 
 		  
@@ -45,17 +44,15 @@
 
 	</h2>
 </div>
-
-	</div>
+</div>
 
 	<div class="telohome">{{raw "list/topic-excerpt" topic=topic}} </div>
-</div>
 </div>
 </div>
 </script>
 
 <script type='text/x-handlebars' data-template-name='topic-list-header.raw'>
-  {{raw "topic-list-header-column" order='vopr' name='number.format.delimiter' forceName='Вопросы'}}
+  {{raw "topic-list-header-column" order='vopr' name='posts'}}
  
   {{#if showLikes}}
      {{raw "topic-list-header-column" sortable='true' order='likes' number='true' forceName='Likes'}}
