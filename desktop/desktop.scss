@@ -5,8 +5,21 @@ img.avatar {
     padding: 15px;
 }
 
+th.vopr, th.views, th.posts, th.activity {
+    display: inline-block;
+    width: 80px !important;
+}
+th.views, th.posts, th.activity {
+    float: right;
+}
 .fn-flex {
     
+a.pren, .badge-wrapper.bullet span.badge-category {
+    color: #919191;
+}    
+.badge-wrapper.bullet .badge-category-bg {
+    display: none;
+}    
 .avatar {
     margin-right: 10px;
     height: 40px;
@@ -14,9 +27,13 @@ img.avatar {
     margin-top: 2px;
 
 }
+.topic-excerpt{
+    font-size: 1.1em;
+}
 
-h2.article-list__title {
-    margin: 1px 0 !important;
+h2.post-title {
+    margin: 4px 0 !important;
+    font-size: 18px;
 }
 .fn__flex-1 {
     flex: 1;
@@ -32,4 +49,26 @@ h2.article-list__title {
     margin-top: -3px;
 }
 
+h2 {
+
+    margin: 20px 0 10px;
+    font-size: 18px;
+
+}
+
+}
+.discourse-tag.simple {
+    font-size: 13px;
+    display: inline-block;
+    background: rgba(82,186,213,0.1);
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: visible;
+    padding: .2em .8em;
+    line-height: 1.2;
+    border-radius: 3px;
+    border-image: initial;
+}
+.discourse-tag.simple:hover, a.title:hover, a.pren:hover, .badge-wrapper.bullet span.badge-category:hover {
+    color:#F48024 !important;
 }
