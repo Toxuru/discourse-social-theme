@@ -15,18 +15,13 @@
 
 {{category-link topic.category showParent="true" onlyStripe="true"}}
 
-	<span class="ft__smaller ft__fade">
-		• &nbsp;&nbsp;
-		{{format-date topic.bumpedAt format="tiny"}}
-	</span>
+<span class="ft__smaller ft__fade">
+    &nbsp; • &nbsp; {{format-date topic.bumpedAt format="tiny"}}
+</span>
 
-&nbsp;
+{{#if topic.replyCount}}  &nbsp; • &nbsp; {{topic.replyCount}} {{i18n 'replies_lowercase' count=topic.replyCount}}  {{else}} {{/if}}
 
-<span class="article-level1">
-	{{#if topic.replyCount}} {{topic.replyCount}}
-</span> 
-
-{{i18n 'replies_lowercase' count=topic.replyCount}} {{else}} {{/if}}
+&nbsp; • &nbsp;  {{number topic.views numberKey="views_long"}}
 
 	<span class="tag-r">  {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}   </span>          
 
