@@ -13,9 +13,9 @@ Help: https://meta.discourse.org/tags/themes
 <img alt="toxu" src="https://toxu.ru/uploads/default/original/2X/b/ba0ea55954c880a8d75b840243b949fb7a6f79e2.png">
 
 
-## discourse-toxu-sidebar
+## discourse-sidebar-categories
 
-https://github.com/Toxuru/discourse-toxu-sidebar
+https://github.com/Toxuru/discourse-sidebar-categories
 
 # License
 
